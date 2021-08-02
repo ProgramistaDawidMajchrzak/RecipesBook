@@ -1,0 +1,85 @@
+.container {
+    width: 100%;
+}
+
+.logo-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-space {
+    width: 200px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #f1f1f1;
+    position: relative;
+    z-index: 10;
+    margin-top: 40px;
+}
+
+.logo {
+    width: 120px;
+    position: relative;
+    left: 50%;
+    bottom: 27px;
+    transform: translate(-50%, 0);
+}
+
+.main {
+    width: 98%;
+    height: 350px;
+    position: relative;
+    left: 50%;
+    top: -15%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    background-size: cover;
+}
+
+.main-side {
+    padding-top: 90px;
+    padding-left: 60px;
+}
+
+.main-side h3 {
+    color: #f1f1f1;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.search-input {
+    height: 35px;
+    width: 300px;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.search-input input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    width: 70%;
+}
+
+.search-input button {
+    background-color: #eb4a36;
+    border: none;
+    width: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 90%;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin-right: 2px;
+}
+
+.search-input button:hover {
+    background-color: #ee6755;
+}

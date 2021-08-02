@@ -1,0 +1,39 @@
+.recipes-container {
+    width: 70%;
+    /* height: auto; */
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.recipes-header {
+    text-align: center;
+}
+
+.recipes-header h3 {
+    padding-top: 40px;
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.recipes-header p {
+    text-transform: uppercase;
+    color: var(--orange);
+    position: relative;
+    bottom: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.recipes-flex {
+    width: 100%;
+    height: auto;
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
