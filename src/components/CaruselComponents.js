@@ -175,24 +175,24 @@ function SweetComponent() {
 }
 
 function BestComponent() {
-    // useEffect(() => {
-    //     let options = {
-    //         method: 'GET',
-    //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '10', size: '30', tags: 'dinner' },
-    //         headers: {
-    //             'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
-    //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
-    //         }
-    //     };
+    useEffect(() => {
+        let options = {
+            method: 'GET',
+            url: 'https://tasty.p.rapidapi.com/recipes/list',
+            params: { from: '10', size: '20', tags: 'dinner' },
+            headers: {
+                'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
+                'x-rapidapi-host': 'tasty.p.rapidapi.com'
+            }
+        };
 
-    //     axios.request(options).then(function (response) {
-    //         console.log(response.data);
-    //         setRecipes(response.data.results)
-    //     }).catch(function (error) {
-    //         console.error(error);
-    //     });
-    // }, []);
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+            setRecipes(response.data.results)
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, []);
 
     const [recipes, setRecipes] = useState([])
 

@@ -37,3 +37,8 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.loading-gif {
+    width: 100px;
+    margin: 50px;
+}
