@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-// import { useState } from 'react';
 
-export default function BasicPagination({ recipesPerPage, totalRecipes, handleChange}) {
+import './RecipesBar.css'
+
+export default function BasicPagination({ recipesPerPage, totalRecipes, handleChange }) {
 
     const [pageNumbers, setPageNumber] = useState()
 
@@ -15,11 +16,8 @@ export default function BasicPagination({ recipesPerPage, totalRecipes, handleCh
         }, 1000)
 
     return (
-        <Stack spacing={1}>
-            {/* <Pagination count={10} /> */}
-            <Pagination onChange={(e) => handleChange(e.target.textContent)} count={pageNumbers} color="primary" />
-            {/* <Pagination count={10} color="secondary" />
-      <Pagination count={10} disabled /> */}
+        <Stack spacing={0}>
+            <Pagination className='pagination' onChange={(e) => handleChange(e.target.textContent)} count={pageNumbers} color="primary" />
         </Stack>
     );
 }

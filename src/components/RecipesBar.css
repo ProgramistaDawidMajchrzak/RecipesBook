@@ -42,3 +42,11 @@
     width: 100px;
     margin: 50px;
 }
+
+.pagination {
+    margin: 50px 0;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

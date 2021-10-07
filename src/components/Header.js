@@ -10,9 +10,7 @@ export default function Header() {
         <>
             <div className="container">
                 <div className="logo-box">
-                    <div className="logo-space">
-                        <img src={Logo} alt="logo" className='logo' />
-                    </div>
+                    <img src={Logo} alt="logo" className='logo' />
                 </div>
                 <div style={{ backgroundImage: `url("/header-bg-image.jpg")` }} className="main">
 

@@ -26,7 +26,7 @@ function GrillComponent() {
         });
     }, []);
 
-    const [recipes, setRecipes] = useState([])
+    const [recipes, setRecipes] = useState([]);
 
     const myRef = useRef();
 
@@ -54,7 +54,10 @@ function GrillComponent() {
                     recipeFirstCategory={recipe.tags[0].name}
                     recipeSecondCategory={recipe.tags[1].name}
                     recipeStars={recipe.user_ratings}
-                    recipeImage={recipe.thumbnail_url} />)}
+                    recipeImage={recipe.thumbnail_url}
+                    recipeIngredients={recipe.sections} // [2] map() -> lista -> .raw_text
+                    recipeInstructions={recipe.instructions} // map() -> .display_text
+                />)}
             </div>
             <button onClick={handlePrev} className='quick-section-left-button button'><FontAwesomeIcon className={'button-left-arrow'} icon={faChevronLeft} size={'2x'} /></button>
             <button onClick={handleNext} className='quick-section-right-button button'><FontAwesomeIcon className={'button-right-arrow'} icon={faChevronRight} size={'2x'} /></button>

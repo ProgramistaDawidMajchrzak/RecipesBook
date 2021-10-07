@@ -10,22 +10,12 @@
     align-items: center;
 }
 
-.logo-space {
-    width: 200px;
-    height: 60px;
-    border-radius: 100%;
-    background-color: #f1f1f1;
-    position: relative;
-    z-index: 10;
-    margin-top: 40px;
-}
 
 .logo {
     width: 120px;
-    position: relative;
-    left: 50%;
     bottom: 27px;
-    transform: translate(-50%, 0);
+    margin: 10px;
+    margin-top: 20px;
 }
 
 .main {
