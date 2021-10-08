@@ -1,33 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './SidebarRecipe.css';
 import { SidebarActiveContext } from './SidebarActiveContext';
-import { RecipeActiveContext } from './SidebarActiveContext';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function SidebarRecipe() {
 
-    const { sidebarActive, setSidebarActive } = useContext(SidebarActiveContext)
-    const { activeRecipe } = useContext(RecipeActiveContext)
-
-    const instruction = activeRecipe.instructions;
+    const { sidebarActive, setSidebarActive, activeRecipe } = useContext(SidebarActiveContext);
 
     return (
         <div className={`sidebar-recipe ${sidebarActive ? `sidebar-show-animation` : `sidebar-hide-animation`}`}>
             <div className="sidebar-recipe-info">
                 <button onClick={() => setSidebarActive(false)}><FontAwesomeIcon icon={faTimes} /></button>
                 <h3>{activeRecipe.name}</h3>
-                <p>{activeRecipe.description}</p>
                 <div className="sidebar-flex">
-                    <div className="sidebar-recipe-info-ingredients"></div>
+                    <div className="sidebar-recipe-info-ingredients">
+                        <ul>
+                            {activeRecipe.ingredients.components[0].map(i => <p>{i.raw_text}</p>)}
+                        </ul>
+                    </div>
                     <div className="sidebar-recipe-info-instructions">
                         <ul>
-                            {/* {instruction.map(i =>
+                            {activeRecipe.instructions.map(i =>
                                 <div key={i.position} className="sidebar-info-instruction-element">
                                     <p>{i.position}</p>
                                     <li>{i.display_text}</li>
-                                </div>)} */}
+                                </div>)}
                         </ul>
                     </div>
                 </div>
@@ -39,11 +38,9 @@ export default function SidebarRecipe() {
     )
 }
 
-// const InstructionElement = (props) => {
+
+// const Ingredient = (props) => {
 //     return (
-//         <div className="sidebar-info-instruction-element">
-//             <p>{i.position}</p>
-//             <li key={i.position}>{i.display_text}</li>
-//         </div>
+//         <li>{props.i}</li>
 //     )
 // }

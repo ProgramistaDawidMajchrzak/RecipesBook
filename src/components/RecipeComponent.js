@@ -4,7 +4,7 @@ import './FontAwesomeIcons/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { SidebarActiveContext } from './SidebarActiveContext';
-import { RecipeActiveContext } from './SidebarActiveContext';
+// import { RecipeActiveContext } from './SidebarActiveContext';
 
 
 export default function RecipeComponent({ recipeName, recipeFirstCategory, recipeSecondCategory, recipeTime, recipeImage, recipeIngredients, recipeInstructions, recipeDescription }) {
@@ -12,8 +12,7 @@ export default function RecipeComponent({ recipeName, recipeFirstCategory, recip
     const recipeRatings = [0, 1, 2, 3, 4, 5]
     const recipeStars = recipeRatings[Math.floor(Math.random() * recipeRatings.length)];
 
-    const { setSidebarActive } = useContext(SidebarActiveContext);
-    const { setActiveRecipe } = useContext(RecipeActiveContext);
+    const { setSidebarActive, setActiveRecipe } = useContext(SidebarActiveContext);
 
     const activeRecipe = {
         name: recipeName,
@@ -23,17 +22,17 @@ export default function RecipeComponent({ recipeName, recipeFirstCategory, recip
         description: recipeDescription
     }
 
-    const handleCkick = () => {
+    const handleClick = () => {
         setSidebarActive(true);
         setActiveRecipe(activeRecipe);
-        console.log(recipeName)
+        console.log(activeRecipe.ingredients)
     };
 
 
 
     return (
         <>
-            <div onClick={() => handleCkick()} className="recipe-box">
+            <div onClick={() => handleClick()} className="recipe-box">
                 <div className="recipe-img">
                     <img src={recipeImage} alt="img" />
                     <div className="img-opacity"></div>

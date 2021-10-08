@@ -6,24 +6,20 @@ import QuickMenuNav from './QuickMenu';
 import RecipesBar from './RecipesBar';
 import SidebarRecipe from './SidebarRecipe';
 import { SidebarActiveContext } from './SidebarActiveContext';
-import { RecipeActiveContext } from './SidebarActiveContext';
-
 
 function App() {
 
   const [sidebarActive, setSidebarActive] = useState(false);
-  const [activeRecipe, setActiveRecipe] = useState({});
+  const [activeRecipe, setActiveRecipe] = useState({ instructions: [{ position: 1, display_text: '' }] }, { sections: [{ components: [{ raw_text: '' }] }] });
 
 
   return (
     <>
       <Header />
-      <SidebarActiveContext.Provider value={{ sidebarActive, setSidebarActive }}>
-        <RecipeActiveContext.Provider value={{ activeRecipe, setActiveRecipe }}>
-          <SidebarRecipe />
-          <QuickMenuNav />
-          <RecipesBar />
-        </RecipeActiveContext.Provider>
+      <SidebarActiveContext.Provider value={{ sidebarActive, setSidebarActive, activeRecipe, setActiveRecipe }}>
+        <SidebarRecipe />
+        <QuickMenuNav />
+        <RecipesBar />
       </SidebarActiveContext.Provider>
     </>
   );
