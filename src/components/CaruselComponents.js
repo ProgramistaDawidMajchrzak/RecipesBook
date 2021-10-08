@@ -11,7 +11,7 @@ function GrillComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '10', size: '30', tags: 'grill' },
+            params: { from: '10', size: '1', tags: 'grill' },
             headers: {
                 'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
@@ -55,6 +55,7 @@ function GrillComponent() {
                     recipeSecondCategory={recipe.tags[1].name}
                     recipeStars={recipe.user_ratings}
                     recipeImage={recipe.thumbnail_url}
+                    recipeDescription={recipe.description}
                     recipeIngredients={recipe.sections} // [2] map() -> lista -> .raw_text
                     recipeInstructions={recipe.instructions} // map() -> .display_text
                 />)}

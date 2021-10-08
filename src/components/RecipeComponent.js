@@ -7,7 +7,7 @@ import { SidebarActiveContext } from './SidebarActiveContext';
 import { RecipeActiveContext } from './SidebarActiveContext';
 
 
-export default function RecipeComponent({ recipeName, recipeFirstCategory, recipeSecondCategory, recipeTime, recipeImage, recipeIngredients, recipeInstructions }) {
+export default function RecipeComponent({ recipeName, recipeFirstCategory, recipeSecondCategory, recipeTime, recipeImage, recipeIngredients, recipeInstructions, recipeDescription }) {
 
     const recipeRatings = [0, 1, 2, 3, 4, 5]
     const recipeStars = recipeRatings[Math.floor(Math.random() * recipeRatings.length)];
@@ -19,8 +19,8 @@ export default function RecipeComponent({ recipeName, recipeFirstCategory, recip
         name: recipeName,
         img: recipeImage,
         ingredients: recipeIngredients,
-        instructions: recipeInstructions
-
+        instructions: recipeInstructions,
+        description: recipeDescription
     }
 
     const handleCkick = () => {

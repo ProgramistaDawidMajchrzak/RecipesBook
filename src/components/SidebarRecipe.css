@@ -39,7 +39,6 @@
 .sidebar-recipe-img {
     width: 40%;
     height: 100%;
-    background-color: blue;
 }
 
 .sidebar-recipe-img img {
@@ -51,6 +50,72 @@
 .sidebar-recipe-info h3 {
     text-align: center;
     font-size: 26px;
+}
+
+.sidebar-recipe-info p {
+    margin: 0 40px;
+    margin-top: 40px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 16px;
+}
+
+.sidebar-recipe-info button {
+    position: absolute;
+    margin: 30px;
+    /* border: 1px solid var(--black); */
+    border: none;
+    background-color: var(--white);
+    border-radius: 100%;
+    padding: 12px 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    opacity: .5;
+    transition: .15s ease-in;
+}
+
+.sidebar-recipe-info button:hover {
+    opacity: 1;
+}
+
+.sidebar-flex {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+.sidebar-recipe-info-ingredients {
+    width: 30%;
+    height: 600px;
+    background-color: aqua;
+}
+
+.sidebar-recipe-info-instructions {
+    width: 60%;
+    height: 600px;
+    background-color: aqua;
+}
+
+.sidebar-recipe-info-instructions ul {
+    list-style: none;
+}
+
+.sidebar-info-instruction-element {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.sidebar-info-instruction-element li {}
+
+.sidebar-info-instruction-element p {
+    margin: 0;
+    margin-right: 5px;
 }
 
 .sidebar-show-animation {
