@@ -10,8 +10,7 @@ import { SidebarActiveContext } from './SidebarActiveContext';
 function App() {
 
   const [sidebarActive, setSidebarActive] = useState(false);
-  const [activeRecipe, setActiveRecipe] = useState({ instructions: [{ position: 1, display_text: '' }] }, { sections: [{ components: [{ raw_text: '' }] }] });
-
+  const [activeRecipe, setActiveRecipe] = useState({ instructions: [{ position: 1, display_text: '' }] }, { components: [{ raw_text: '' }] });
 
   return (
     <>

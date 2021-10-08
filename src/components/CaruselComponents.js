@@ -11,7 +11,7 @@ function GrillComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '20', size: '1', tags: 'grill' },
+            params: { from: '50', size: '10', tags: 'grill' },
             headers: {
                 'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'

@@ -89,7 +89,18 @@
 .sidebar-recipe-info-ingredients {
     width: 20%;
     height: auto;
+}
 
+.sidebar-recipe-info-ingredients h4 {
+    margin-left: 40px;
+}
+
+.sidebar-recipe-info-ingredients li {
+    list-style: none;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: var(--orange);
 }
 
 .sidebar-recipe-info-instructions {

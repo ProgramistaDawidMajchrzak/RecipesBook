@@ -16,8 +16,9 @@ export default function SidebarRecipe() {
                 <h3>{activeRecipe.name}</h3>
                 <div className="sidebar-flex">
                     <div className="sidebar-recipe-info-ingredients">
+                        <h4>Ingredients</h4>
                         <ul>
-                            {activeRecipe.ingredients.components[0].map(i => <p>{i.raw_text}</p>)}
+                            {activeRecipe.ingredients[0].components.map(i => <li>{i.raw_text}</li>)}
                         </ul>
                     </div>
                     <div className="sidebar-recipe-info-instructions">
