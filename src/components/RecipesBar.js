@@ -1,44 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './RecipesBar.css';
 import RecipeComponent from './RecipeComponent.js';
 import axios from 'axios';
 import BasicPagination from './Pagination';
 
-import LoadingGif from './loading.gif'
+import LoadingGif from './loading.gif';
 
 export default function RecipesBar() {
 
-    // useEffect(() => {
-    //     setLoading(true)
-    //     let options = {
-    //         method: 'GET',
-    //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '0', size: '40', tags: 'oven' },
-    //         headers: {
-    //             'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
-    //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
-    //         }
-    //     };
+    const recipesTrue = [];
 
-    //     axios.request(options).then(function (response) {
-
-    //         // console.log(response.data);
-    //         setRecipes(response.data.results)
-    //         setLoading(false)
-    //     }).catch(function (error) {
-    //         // console.error(error);
-    //     });
-    // }, []);
-    // useEffect(() => {
-    //     axios.request('https://api.spoonacular.com/recipes/complexSearch', { headers: { 'apiKey': '2fa022adeafe4f239feda6ec91af2d5d' } }).then(function (response) {
-    //         console.log(response.data);
-    //         // setRecipes(response.data.results)
-    //     }).catch(function (error) {
-    //         // console.error(error);
-    //     });
-    // }, []);
-
-    const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState(recipesTrue);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [recipesPerPage] = useState(10);
@@ -47,13 +19,65 @@ export default function RecipesBar() {
     const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
     const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
 
-    const handleChange = (pageNumber) => {
-        // console.log(pageNumber)
-        setCurrentPage(pageNumber)
-    }
+    useEffect(() => {
+        setLoading(true);
 
+        let options = {
+            method: 'GET',
+            url: 'https://tasty.p.rapidapi.com/recipes/list',
+            params: { from: '50', size: '30', tags: 'dinner' },
+            headers: {
+                'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
+                'x-rapidapi-host': 'tasty.p.rapidapi.com'
+            }
+        };
+
+        axios.request(options).then(function (response) {
+
+            recipesTrue.push(...response.data.results)
+            Paginate()
+            setLoading(false)
+            // console.log(response.data.results)
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, []);
+    // useEffect(() => {
+    //     setLoading(true);
+    //     let options = {
+    //         method: 'GET',
+    //         url: 'https://tasty.p.rapidapi.com/recipes/list',
+    //         params: { from: '50', size: '20', tags: 'stove_top' },
+    //         headers: {
+    //             'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
+    //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
+    //         }
+    //     };
+
+    //     axios.request(options).then(function (response) {
+    //         recipesTrue.push(...response.data.results)
+    //         setLoading(false)
+    //         Paginate()
+    //         // console.log(response.data.results)
+    //     }).catch(function (error) {
+    //         console.error(error);
+    //     });
+    // }, []);
+
+    const [pageNumbers, setPageNumbers] = useState();
+
+    const Paginate = () => {
+        const totalRecipes = recipes.length
+        let i = totalRecipes / recipesPerPage + ((totalRecipes % recipesPerPage === 0) ? 0 : 1);
+        return (setPageNumbers(i))
+
+    };
+
+    const handleChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
     return (
-        <div className='recipes-container'>
+        <div className='recipes-container' id='recipes-bar'>
             <div className="recipes-header">
                 <h3>Recipes</h3>
                 <p>Search and find best recipes for healthy and delicious meals</p>
@@ -61,21 +85,21 @@ export default function RecipesBar() {
             <div className="recipes-flex">
                 {loading ? <img src={LoadingGif} className='loading-gif' alt="loading..." /> : null}
 
-
                 {currentRecipes.map(recipe => <RecipeComponent
                     key={recipe.id}
                     recipeName={recipe.name}
                     recipeFirstCategory={recipe.tags[0].name}
                     recipeSecondCategory={recipe.tags[1].name}
-                    recipeStars={recipe.user_ratings}
+                    recipeRating={recipe.user_ratings}
                     recipeImage={recipe.thumbnail_url}
+                    recipeDescription={recipe.description}
+                    recipeIngredients={recipe.sections[0]}
+                    recipeInstructions={recipe.instructions}
                 />)}
             </div>
-            {!loading && <BasicPagination
-                recipesPerPage={recipesPerPage}
-                totalRecipes={recipes.length}
-                handleChange={handleChange}
-            />}
+            <BasicPagination
+                pageNumbers={pageNumbers}
+                handleChange={handleChange} />
         </div>
     )
 }

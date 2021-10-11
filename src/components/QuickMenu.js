@@ -13,7 +13,7 @@ export default function QuickMenuNav() {
                 <div className="quick-navbar">
                     <nav>
                         <ul>
-                            <li><NavLink to='/grill' ><FontAwesomeIcon icon={faDrumstickBite} />  GRILL</NavLink></li>
+                            <li><NavLink to='/' exact><FontAwesomeIcon icon={faDrumstickBite} />  GRILL</NavLink></li>
                             <li><NavLink to='/vege'><FontAwesomeIcon icon={faLeaf} /> VEGE</NavLink></li>
                             <li><NavLink to='/sweet'><FontAwesomeIcon icon={faCookieBite} /> SWEET</NavLink></li>
                             <li><NavLink to='/best'><FontAwesomeIcon icon={faStar} /> BEST</NavLink></li>
@@ -23,7 +23,7 @@ export default function QuickMenuNav() {
                 <div className="quick-section">
 
                     <Switch>
-                        <Route path='/grill' component={GrillComponent} />
+                        <Route path='/' exact component={GrillComponent} />
                         <Route path='/vege' component={VegeComponent} />
                         <Route path='/sweet' component={SweetComponent} />
                         <Route path='/best' component={BestComponent} />

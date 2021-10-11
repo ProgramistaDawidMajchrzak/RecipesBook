@@ -64,7 +64,11 @@
 
 .recipe-stars {
     margin: 0;
+}
 
+.recipe-stars span {
+    font-weight: 600;
+    font-size: 13px;
 }
 
 .recipe-time {

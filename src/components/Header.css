@@ -57,13 +57,13 @@
     width: 70%;
 }
 
-.search-input button {
+.main-side button {
     background-color: #eb4a36;
     border: none;
     width: 70px;
     border-radius: 5px;
     cursor: pointer;
-    height: 90%;
+    height: 30px;
     position: relative;
     top: 50%;
     transform: translate(0, -50%);

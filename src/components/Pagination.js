@@ -4,16 +4,7 @@ import Stack from '@mui/material/Stack';
 
 import './RecipesBar.css'
 
-export default function BasicPagination({ recipesPerPage, totalRecipes, handleChange }) {
-
-    const [pageNumbers, setPageNumber] = useState()
-
-    setTimeout(
-        () => {
-            for (let i = 1; i <= Math.ceil(totalRecipes / recipesPerPage); i++) {
-                setPageNumber(i)
-            }
-        }, 1000)
+export default function BasicPagination({ pageNumbers, handleChange }) {
 
     return (
         <Stack spacing={0}>

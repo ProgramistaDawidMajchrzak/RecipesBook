@@ -10,12 +10,12 @@ import { SidebarActiveContext } from './SidebarActiveContext';
 function App() {
 
   const [sidebarActive, setSidebarActive] = useState(false);
-  const [activeRecipe, setActiveRecipe] = useState({ instructions: [{ position: 1, display_text: '' }] }, { components: [{ raw_text: '' }] });
+  const [activeRecipe, setActiveRecipe] = useState({ instructions: [{ position: 1, display_text: '' }], ingredients: { components: [{ position: 1, raw_text: '' }] } });
 
   return (
     <>
-      <Header />
       <SidebarActiveContext.Provider value={{ sidebarActive, setSidebarActive, activeRecipe, setActiveRecipe }}>
+        <Header />
         <SidebarRecipe />
         <QuickMenuNav />
         <RecipesBar />

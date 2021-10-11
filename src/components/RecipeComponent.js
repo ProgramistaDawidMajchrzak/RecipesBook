@@ -4,13 +4,9 @@ import './FontAwesomeIcons/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { SidebarActiveContext } from './SidebarActiveContext';
-// import { RecipeActiveContext } from './SidebarActiveContext';
 
+export default function RecipeComponent({ recipeName, recipeFirstCategory, recipeSecondCategory, recipeImage, recipeIngredients, recipeInstructions, recipeDescription, recipeRating }) {
 
-export default function RecipeComponent({ recipeName, recipeFirstCategory, recipeSecondCategory, recipeTime, recipeImage, recipeIngredients, recipeInstructions, recipeDescription }) {
-
-    const recipeRatings = [0, 1, 2, 3, 4, 5]
-    const recipeStars = recipeRatings[Math.floor(Math.random() * recipeRatings.length)];
 
     const { setSidebarActive, setActiveRecipe } = useContext(SidebarActiveContext);
 
@@ -25,10 +21,9 @@ export default function RecipeComponent({ recipeName, recipeFirstCategory, recip
     const handleClick = () => {
         setSidebarActive(true);
         setActiveRecipe(activeRecipe);
-        console.log(activeRecipe.ingredients)
     };
 
-
+    const amountOfRates = recipeRating.count_positive + recipeRating.count_negative;
 
     return (
         <>
@@ -42,13 +37,12 @@ export default function RecipeComponent({ recipeName, recipeFirstCategory, recip
                     <p className='recipe-categories'>{`${recipeFirstCategory}  • ${recipeSecondCategory}`}</p>
                     <div className="recipe-bottom-info">
                         <div className="recipe-stars">
-                            <FontAwesomeIcon icon={faStar} color={recipeStars >= 1 ? 'var(--orange)' : 'var(--black)'} />
-                            <FontAwesomeIcon icon={faStar} color={recipeStars >= 2 ? 'var(--orange)' : 'var(--black)'} />
-                            <FontAwesomeIcon icon={faStar} color={recipeStars >= 3 ? 'var(--orange)' : 'var(--black)'} />
-                            <FontAwesomeIcon icon={faStar} color={recipeStars >= 4 ? 'var(--orange)' : 'var(--black)'} />
-                            <FontAwesomeIcon icon={faStar} color={recipeStars === 5 ? 'var(--orange)' : 'var(--black)'} />
+                            <FontAwesomeIcon icon={faStar} color={recipeRating.score >= .2 ? 'var(--orange)' : 'var(--black)'} />
+                            <FontAwesomeIcon icon={faStar} color={recipeRating.score >= .4 ? 'var(--orange)' : 'var(--black)'} />
+                            <FontAwesomeIcon icon={faStar} color={recipeRating.score >= .6 ? 'var(--orange)' : 'var(--black)'} />
+                            <FontAwesomeIcon icon={faStar} color={recipeRating.score >= .8 ? 'var(--orange)' : 'var(--black)'} />
+                            <FontAwesomeIcon icon={faStar} color={recipeRating.score === 1 ? 'var(--orange)' : 'var(--black)'} /> ( <span>{amountOfRates}</span> )
                         </div>
-                        <p className="recipe-time">{recipeTime}</p>
                     </div>
                 </div>
             </div>

@@ -6,3 +6,10 @@
     overflow: hidden;
     scroll-behavior: smooth;
 }
+
+.nav-loading-gif {
+    width: 50px;
+    position: relative;
+    top: 20%;
+    left: 45%;
+}
