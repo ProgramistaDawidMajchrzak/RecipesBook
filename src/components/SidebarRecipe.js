@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './SidebarRecipe.css';
 import { SidebarActiveContext } from './SidebarActiveContext';
 
@@ -23,7 +23,7 @@ export default function SidebarRecipe() {
                     </div>
                     <div className="sidebar-recipe-info-instructions">
                         <ul>
-                            {activeRecipe.instructions.map(i =>
+                            {activeRecipe.instructions.slice(0, 10).map(i =>
                                 <div key={i.position} className="sidebar-info-instruction-element">
                                     <p>{i.position}</p>
                                     <li>{i.display_text}</li>
@@ -39,9 +39,3 @@ export default function SidebarRecipe() {
     )
 }
 
-
-// const Ingredient = (props) => {
-//     return (
-//         <li>{props.i}</li>
-//     )
-// }

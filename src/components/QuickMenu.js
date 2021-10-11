@@ -13,10 +13,10 @@ export default function QuickMenuNav() {
                 <div className="quick-navbar">
                     <nav>
                         <ul>
-                            <li><NavLink to='/' exact><FontAwesomeIcon icon={faDrumstickBite} />  GRILL</NavLink></li>
-                            <li><NavLink to='/vege'><FontAwesomeIcon icon={faLeaf} /> VEGE</NavLink></li>
-                            <li><NavLink to='/sweet'><FontAwesomeIcon icon={faCookieBite} /> SWEET</NavLink></li>
-                            <li><NavLink to='/best'><FontAwesomeIcon icon={faStar} /> BEST</NavLink></li>
+                            <li><NavLink to='/' exact><FontAwesomeIcon className='nav-icon' icon={faDrumstickBite} />  GRILL</NavLink></li>
+                            <li><NavLink to='/vege'><FontAwesomeIcon className='nav-icon' icon={faLeaf} /> VEGE</NavLink></li>
+                            <li><NavLink to='/sweet'><FontAwesomeIcon className='nav-icon' icon={faCookieBite} /> SWEET</NavLink></li>
+                            <li><NavLink to='/best'><FontAwesomeIcon className='nav-icon' icon={faStar} /> BEST</NavLink></li>
                         </ul>
                     </nav>
                 </div>

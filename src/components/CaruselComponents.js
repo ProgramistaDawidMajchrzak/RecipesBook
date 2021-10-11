@@ -5,7 +5,7 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './CaruselComponent.css';
 
-import LoadingGif from './loading.gif'
+import LoadingGif from './loading.gif';
 
 function GrillComponent() {
 

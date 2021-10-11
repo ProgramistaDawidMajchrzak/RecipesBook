@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Header.css';
 import Logo from '../images/recipes-book-logo.svg';
 import './FontAwesomeIcons/index';
@@ -19,17 +19,17 @@ export default function Header() {
 
                     <div className="main-side">
                         <h3>Find recipe and enjoy your meal</h3>
-                      
-                            <Link
-                                to="recipes-bar"
-                                spy={true}
-                                smooth={true}
-                                offset={-70}
-                                duration={500}
-                            >
-                                <button ><FontAwesomeIcon icon={faSearch} color={'#f1f1f1'} /></button>
-                            </Link>
-                       
+
+                        <Link
+                            to="recipes-bar"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            <button ><FontAwesomeIcon icon={faSearch} color={'#f1f1f1'} /></button>
+                        </Link>
+
                     </div>
 
                 </div>
