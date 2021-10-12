@@ -9,7 +9,7 @@ import { GrillComponent, VegeComponent, SweetComponent, BestComponent } from './
 export default function QuickMenuNav() {
     return (
         <>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <div className="quick-navbar">
                     <nav>
                         <ul>
