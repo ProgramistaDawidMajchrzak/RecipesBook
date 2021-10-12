@@ -19,48 +19,48 @@ export default function RecipesBar() {
     const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
     const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
 
-    // useEffect(() => {
-    //     setLoading(true);
+    useEffect(() => {
+        setLoading(true);
 
-    //     let options = {
-    //         method: 'GET',
-    //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '50', size: '30', tags: 'dinner' },
-    //         headers: {
-    //             'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
-    //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
-    //         }
-    //     };
+        let options = {
+            method: 'GET',
+            url: 'https://tasty.p.rapidapi.com/recipes/list',
+            params: { from: '50', size: '30', tags: 'dinner' },
+            headers: {
+                'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
+                'x-rapidapi-host': 'tasty.p.rapidapi.com'
+            }
+        };
 
-    //     axios.request(options).then(function (response) {
+        axios.request(options).then(function (response) {
 
-    //         recipesTrue.push(...response.data.results)
-    //         Paginate()
-    //         setLoading(false)
-    //     }).catch(function (error) {
-    //         console.error(error);
-    //     });
-    // }, []);
-    // useEffect(() => {
-    //     setLoading(true);
-    //     let options = {
-    //         method: 'GET',
-    //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '50', size: '20', tags: 'stove_top' },
-    //         headers: {
-    //             'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
-    //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
-    //         }
-    //     };
+            recipesTrue.push(...response.data.results)
+            Paginate()
+            setLoading(false)
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, []);
+    useEffect(() => {
+        setLoading(true);
+        let options = {
+            method: 'GET',
+            url: 'https://tasty.p.rapidapi.com/recipes/list',
+            params: { from: '50', size: '20', tags: 'stove_top' },
+            headers: {
+                'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
+                'x-rapidapi-host': 'tasty.p.rapidapi.com'
+            }
+        };
 
-    //     axios.request(options).then(function (response) {
-    //         recipesTrue.push(...response.data.results)
-    //         setLoading(false)
-    //         Paginate()
-    //     }).catch(function (error) {
-    //         console.error(error);
-    //     });
-    // }, []);
+        axios.request(options).then(function (response) {
+            recipesTrue.push(...response.data.results)
+            setLoading(false)
+            Paginate()
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, []);
 
     const [pageNumbers, setPageNumbers] = useState();
 
