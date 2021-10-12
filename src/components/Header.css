@@ -25,13 +25,21 @@
     left: 50%;
     top: -15%;
     transform: translate(-50%, 0);
+}
+
+.main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: absolute;
     border-radius: 10px;
-    background-size: cover;
 }
 
 .main-side {
     padding-top: 90px;
     padding-left: 60px;
+    position: absolute;
 }
 
 .main-side h3 {
@@ -74,4 +82,9 @@
     background-color: #ee6755;
 }
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .main-side {
+        padding-top: 150px;
+        padding-left: 40px;
+    }
+}

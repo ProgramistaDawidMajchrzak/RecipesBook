@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import Logo from '../images/recipes-book-logo.svg';
+import BgImage from '../images/bg-image.jpg';
 import './FontAwesomeIcons/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -15,8 +16,8 @@ export default function Header() {
                 <div className="logo-box">
                     <img src={Logo} alt="logo" className='logo' />
                 </div>
-                <div style={{ backgroundImage: `url("/header-bg-image.jpg")` }} className="main">
-
+                <div className="main">
+                    <img src={BgImage} alt="img" />
                     <div className="main-side">
                         <h3>Find recipe and enjoy your meal</h3>
 

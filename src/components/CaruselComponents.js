@@ -9,26 +9,26 @@ import LoadingGif from './loading.gif';
 
 function GrillComponent() {
 
-    useEffect(() => {
-        setLoading(true)
-        let options = {
-            method: 'GET',
-            url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '50', size: '10', tags: 'grill' },
-            headers: {
-                'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
-                'x-rapidapi-host': 'tasty.p.rapidapi.com'
-            }
-        };
+    // useEffect(() => {
+    //     setLoading(true)
+    //     let options = {
+    //         method: 'GET',
+    //         url: 'https://tasty.p.rapidapi.com/recipes/list',
+    //         params: { from: '42', size: '18', tags: 'grill' },
+    //         headers: {
+    //             'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
+    //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
+    //         }
+    //     };
 
-        axios.request(options).then(function (response) {
-            setRecipes(response.data.results)
-            setLoading(false)
-            console.log(response.data.results)
-        }).catch(function (error) {
-            console.error(error);
-        });
-    }, []);
+    //     axios.request(options).then(function (response) {
+    //         setRecipes(response.data.results)
+    //         setLoading(false)
+    //         console.log(response.data.results)
+    //     }).catch(function (error) {
+    //         console.error(error);
+    //     });
+    // }, []);
 
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -78,9 +78,9 @@ function VegeComponent() {
     //     let options = {
     //         method: 'GET',
     //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '70', size: '15', tags: 'vegan' },
+    //         params: { from: '18', size: '19', tags: 'vegan' },
     //         headers: {
-    //             'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
+    //             'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
     //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
     //         }
     //     };
@@ -142,9 +142,9 @@ function SweetComponent() {
     //     let options = {
     //         method: 'GET',
     //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '50', size: '10', tags: 'inguldent_sweets' },
+    //         params: { from: '36', size: '18', tags: 'indulgent_sweets' },
     //         headers: {
-    //             'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
+    //             'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
     //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
     //         }
     //     };
@@ -206,9 +206,9 @@ function BestComponent() {
     //     let options = {
     //         method: 'GET',
     //         url: 'https://tasty.p.rapidapi.com/recipes/list',
-    //         params: { from: '50', size: '10', tags: 'dinner' },
+    //         params: { from: '25', size: '17', tags: 'dinner' },
     //         headers: {
-    //             'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
+    //             'x-rapidapi-key': '9f6685a06cmshfb30d08e64f664ep146ae5jsnf8998893214f',
     //             'x-rapidapi-host': 'tasty.p.rapidapi.com'
     //         }
     //     };
