@@ -8,7 +8,7 @@ export default function BasicPagination({ pageNumbers, handleChange }) {
 
     return (
         <Stack spacing={0}>
-            <Pagination className='pagination' onChange={(e) => handleChange(e.target.textContent)} count={pageNumbers} color="primary" />
+            <Pagination className='pagination' onChange={(e) => handleChange(e.target.textContent)} count={pageNumbers} />
         </Stack>
     );
 }
