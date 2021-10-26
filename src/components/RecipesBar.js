@@ -38,15 +38,14 @@ export default function RecipesBar() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '53', size: '30', tags: 'dinner' },
+            params: { from: '55', size: '30', tags: 'dinner' },
             headers: {
-                'x-rapidapi-key': '70dd769066mshc958db014852d9ep1ca48ejsn20de3b1bd360',
+                'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
             }
         };
 
         axios.request(options).then(function (response) {
-            console.log(response.data.results)
             recipesTrue.push(...response.data.results)
             Paginate()
             setLoading(false)

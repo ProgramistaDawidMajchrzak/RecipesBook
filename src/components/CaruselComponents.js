@@ -206,7 +206,7 @@ function BestComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '30', size: '10', tags: 'dinner' },
+            params: { from: '0', size: '10', tags: 'oven' },
             headers: {
                 'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
