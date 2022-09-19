@@ -14,9 +14,9 @@ function GrillComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '50', size: '12', tags: 'grill' },
+            params: { from: '0', size: '10', tags: 'grill' },
             headers: {
-                'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
+                'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
             }
         };
@@ -78,9 +78,9 @@ function VegeComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '20', size: '15', tags: 'vegan' },
+            params: { from: '0', size: '15', tags: 'vegan' },
             headers: {
-                'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
+                'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
             }
         };
@@ -142,9 +142,9 @@ function SweetComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '0', size: '10', tags: 'indulgent_sweets' },
+            params: { from: '10', size: '10', tags: 'indulgent_sweets' },
             headers: {
-                'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
+                'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
             }
         };
@@ -208,7 +208,7 @@ function BestComponent() {
             url: 'https://tasty.p.rapidapi.com/recipes/list',
             params: { from: '0', size: '10', tags: 'oven' },
             headers: {
-                'x-rapidapi-key': '6f1b3c41acmsh37bc0afeef8b7dfp18af0ajsne42b76787c15',
+                'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
             }
         };
