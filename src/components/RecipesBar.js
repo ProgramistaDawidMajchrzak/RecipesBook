@@ -38,7 +38,7 @@ export default function RecipesBar() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '', size: '20', tags: 'dinner' },
+            params: { from: '200', size: '20', tags: 'dinner' },
             headers: {
                 'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'

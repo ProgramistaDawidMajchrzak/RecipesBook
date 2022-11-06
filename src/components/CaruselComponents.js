@@ -142,7 +142,7 @@ function SweetComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '10', size: '10', tags: 'indulgent_sweets' },
+            params: { from: '40', size: '10', tags: 'indulgent_sweets' },
             headers: {
                 'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
@@ -206,7 +206,7 @@ function BestComponent() {
         let options = {
             method: 'GET',
             url: 'https://tasty.p.rapidapi.com/recipes/list',
-            params: { from: '0', size: '10', tags: 'oven' },
+            params: { from: '30', size: '10', tags: 'oven' },
             headers: {
                 'x-rapidapi-key': 'b1467950cdmsh52b1bb904a3d2d0p17f082jsndcb67a388af6',
                 'x-rapidapi-host': 'tasty.p.rapidapi.com'
